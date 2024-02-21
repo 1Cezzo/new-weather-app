@@ -1,5 +1,6 @@
 import React from 'react';
-import { WbSunny, Cloud, Explore } from '@mui/icons-material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faCloud, faWind } from '@fortawesome/free-solid-svg-icons';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const weatherData = {
@@ -19,7 +20,7 @@ export function WeatherPage() {
             <CardContent className="grid gap-4">
                 <div>
                     <div className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
-                        <WbSunny className="w-5 h-5 mr-2" /> {/* Use WbSunny for temperature */}
+                        <FontAwesomeIcon icon={faSun} className="text-yellow-500 w-5 h-5 mr-2" />
                         <div className="space-y-1">
                             <p className="text-sm font-medium leading-none">
                                 Temperature
@@ -30,7 +31,7 @@ export function WeatherPage() {
                         </div>
                     </div>
                     <div className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
-                        <Cloud className="w-5 h-5 mr-2" /> {/* Use Cloud for precipitation */}
+                        <FontAwesomeIcon icon={faCloud} className="text-blue-500 w-5 h-5 mr-2" />
                         <div className="space-y-1">
                             <p className="text-sm font-medium leading-none">
                                 Precipitation
@@ -41,7 +42,7 @@ export function WeatherPage() {
                         </div>
                     </div>
                     <div className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
-                        <Explore className="w-5 h-5 mr-2" /> {/* Use Explore for wind */}
+                        <FontAwesomeIcon icon={faWind} className="text-green-500 w-5 h-5 mr-2" />
                         <div className="space-y-1">
                             <p className="text-sm font-medium leading-none">
                                 Wind
