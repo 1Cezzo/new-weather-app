@@ -3,19 +3,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faCloud, faWind } from '@fortawesome/free-solid-svg-icons';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-const weatherData = {
-    cityName: "New York",
-    temperature: "25°C",
-    precipitation: "Clear",
-    wind: "5 m/s",
-};
+interface WeatherPageProps {
+  weatherData: {
+    location: {
+      name: string;
+      country: string;
+    };
+    current: {
+      temp_c: number;
+      temp_f: number;
+      condition: {
+        text: string;
+        icon: string;
+      };
+      wind_kph: number;
+      wind_mph: number;
+    };
+  };
+}
 
-export function WeatherPage() {
+const WeatherPage: React.FC<WeatherPageProps> = ({ weatherData }) => {
+    const { location, current } = weatherData;
+    const { name, country } = location;
+    const { temp_c, temp_f, condition, wind_kph, wind_mph } = current;
     return (
         <Card className="w-[380px]">
             <CardHeader>
                 <CardTitle>Weather</CardTitle>
-                <CardDescription>{weatherData.cityName}</CardDescription>
+                <CardDescription>{name}</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
                 <div>
@@ -26,7 +41,7 @@ export function WeatherPage() {
                                 Temperature
                             </p>
                             <p className="text-sm text-muted-foreground">
-                                {weatherData.temperature}
+                                {temp_c}°C / {temp_f}°F
                             </p>
                         </div>
                     </div>
@@ -37,7 +52,7 @@ export function WeatherPage() {
                                 Precipitation
                             </p>
                             <p className="text-sm text-muted-foreground">
-                                {weatherData.precipitation}
+                                {condition.text}
                             </p>
                         </div>
                     </div>
@@ -48,7 +63,7 @@ export function WeatherPage() {
                                 Wind
                             </p>
                             <p className="text-sm text-muted-foreground">
-                                {weatherData.wind}
+                                {wind_kph} km/h / {wind_mph} mph
                             </p>
                         </div>
                     </div>
@@ -57,3 +72,5 @@ export function WeatherPage() {
         </Card>
     );
 }
+
+export default WeatherPage;
