@@ -1,6 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.dark {
+  background-color: #212121; /* Dark mode background color */
+  color: #fff; /* Dark mode text color */
+}
+
+.dark .container {
+  background-color: transparent; /* Transparent background for container in dark mode */
+}
+
+.card {
+  background-color: #fff; /* Light mode card background color */
+  color: #333; /* Light mode text color */
+}
+
+.dark .card {
+  background-color: #333; /* Dark mode card background color */
+  color: #fff; /* Dark mode text color */
+}
+
  
 @layer base {
   :root {

@@ -27,7 +27,8 @@ const WeatherPage: React.FC<WeatherPageProps> = ({ weatherData }) => {
     const { name, country } = location;
     const { temp_c, temp_f, condition, wind_kph, wind_mph } = current;
     return (
-        <Card className="w-[380px]">
+      <div className={`weather-page`}>
+        <Card className={`w-[380px]`}>
             <CardHeader>
                 <CardTitle>Weather</CardTitle>
                 <CardDescription>{name}</CardDescription>
@@ -70,6 +71,7 @@ const WeatherPage: React.FC<WeatherPageProps> = ({ weatherData }) => {
                 </div>
             </CardContent>
         </Card>
+      </div>
     );
 }
 

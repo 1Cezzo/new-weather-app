@@ -8,7 +8,7 @@ interface SearchProps {
 }
 
 const Search: React.FC<SearchProps> = ({ onSearch }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('London');
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -20,23 +20,25 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   };
 
   return (
-    <Card className="w-[380px]">
-      <CardHeader>
-        <CardTitle>Search</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="flex gap-2">
-          <Input
-            type="text"
-            placeholder="Enter location..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-            className="flex-1"
-          />
-          <Button type="submit">Search</Button>
-        </form>
-      </CardContent>
-    </Card>
+    <div className={`weather-page`}>
+      <Card className={`w-[380px]`}>
+        <CardHeader>
+          <CardTitle>Search</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="flex gap-2">
+            <Input
+              type="text"
+              placeholder="Enter location..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="flex-1"
+            />
+            <Button type="submit">Search</Button>
+          </form>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 
