@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator";
 import Precipitation from './precipitation';
 import Wind from './wind';
+import Temperature from './temperature';
 
 interface WeatherPageProps {
   weatherData: {
@@ -46,17 +47,7 @@ const WeatherPage: React.FC<WeatherPageProps> = ({ weatherData }) => {
             </CardHeader>
             <CardContent className="grid gap-4">
                 <div>
-                    <div className="mb-1 grid grid-cols-[30px_1fr] items-start last:mb-0 last:pb-0">
-                      {condition.icon && <img src={condition.icon} alt="Weather Icon" className="w-7 h-7 mr-6" />} {/* Render weather condition icon */}
-                        <div className="space-y-1">
-                            <p className="text-sm font-medium leading-none">
-                                Temperature
-                            </p>
-                            <p className="text-sm text-muted-foreground">
-                                {temp_c}°C / {temp_f}°F
-                            </p>
-                        </div>
-                    </div>
+                    <Temperature temp_c={temp_c} temp_f={temp_f} condition={condition} />
                     <Separator className="my-3" />
                     <Precipitation precip_mm={precip_mm} />
                     <Separator className="my-3" />
