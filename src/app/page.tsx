@@ -32,7 +32,7 @@ export default function Home() {
   const handleSearch = async (query: React.SetStateAction<string>) => {
     setSearchQuery(query);
     try {
-      const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=7caf7a01df824683a03122224231511&days=5&q=${query}`);
+      const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=7caf7a01df824683a03122224231511&q=${query}`);
       if (!response.ok) {
         throw new Error('Failed to fetch weather data');
       }
