@@ -36,6 +36,12 @@ export default function Home() {
       if (!response.ok) {
         throw new Error('Failed to fetch weather data');
       }
+      const responseFuture = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=7caf7a01df824683a03122224231511&q=${query}&days=3`);
+      if (!responseFuture.ok) {
+        throw new Error('Failed to fetch weather data');
+      }
+      const futureData = await responseFuture.json();
+      console.log('Future data:', futureData);
       const data = await response.json();
       console.log('Weather data:', data);
       setWeatherData(data);
