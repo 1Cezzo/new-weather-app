@@ -8,9 +8,9 @@ interface PrecipitationProps {
 
 const Precipitation: React.FC<PrecipitationProps> = ({ precip_mm }) => {
     let icon;
-    if (precip_mm <= 2) {
+    if (precip_mm <= 0.5) {
         icon = faCloud;
-    } else if (precip_mm <= 10) {
+    } else if (precip_mm <= 4) {
         icon = faCloudRain;
     } else {
         icon = faCloudShowersHeavy;
