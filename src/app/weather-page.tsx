@@ -1,12 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faCloud, faWind } from '@fortawesome/free-solid-svg-icons';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import Precipitation from './precipitation';
-import Wind from './wind';
-import Temperature from './temperature';
+import Precipitation from '../components/precipitation';
+import Wind from '../components/wind';
+import Temperature from '../components/temperature';
 
 interface WeatherPageProps {
   weatherData: {

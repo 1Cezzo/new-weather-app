@@ -2,7 +2,7 @@
 
 import '@/app/globals.css';
 import React, { useState, useEffect } from 'react';
-import WeatherPage from "@/components/weather-page";
+import WeatherPage from "@/app/weather-page";
 import Search from "@/components/search";
 import DarkModeSwitch from "@/components/darkmode-switch";
 
