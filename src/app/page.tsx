@@ -2,9 +2,10 @@
 
 import '@/app/globals.css';
 import React, { useState, useEffect } from 'react';
-import WeatherPage from "@/app/weather-page";
+import WeatherPage from "@/components/weather-page";
 import Search from "@/components/search";
 import DarkModeSwitch from "@/components/darkmode-switch";
+import WeatherTabs from '@/components/weather-tabs';
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -57,7 +58,7 @@ export default function Home() {
       <DarkModeSwitch darkMode={darkMode} setDarkMode={toggleDarkMode} />
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', justifyContent: 'center' }}>
         <Search onSearch={handleSearch} />
-        {weatherData && <WeatherPage weatherData={weatherData} />}
+        {weatherData && <WeatherTabs weatherData={weatherData} error={error} />}
         {error && <p>{error}</p>}
       </div>
     </div>

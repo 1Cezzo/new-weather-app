@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import Precipitation from '../components/precipitation';
-import Wind from '../components/wind';
-import Temperature from '../components/temperature';
+import Precipitation from './precipitation';
+import Wind from './wind';
+import Temperature from './temperature';
 
 interface WeatherPageProps {
   weatherData: {
@@ -37,7 +37,7 @@ const WeatherPage: React.FC<WeatherPageProps> = ({ weatherData }) => {
     const { temp_c, temp_f, condition, wind_kph, wind_mph, precip_mm, gust_kph, gust_mph } = current;
     return (
       <div className={`weather-page`}>
-        <Card className={`w-[380px]`}>
+        <Card className={`w-[400px]`}>
             <CardHeader>
                 <CardTitle>Weather</CardTitle>
                 <CardDescription>{name}, {country}</CardDescription>
