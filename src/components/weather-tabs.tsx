@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import WeatherPage from '@/components/weather-page';
+import WeatherPage1Day from '@/components/1-day-weather-page';
+import WeatherPage7Day from '@/components/7-day-weather-page';
 
 interface WeatherTabsProps {
   weatherData: any;
@@ -19,14 +20,18 @@ const WeatherTabs: React.FC<WeatherTabsProps> = ({ weatherData, error }) => {
       <Tabs defaultValue={activeTab} className="w-[400px]">
         <TabsList>
           <TabsTrigger value="1-day" onClick={() => handleTabChange('1-day')}>1-day</TabsTrigger>
-          {/* Add tabs for other options */}
+          <TabsTrigger value="7-day" onClick={() => handleTabChange('7-day')}>7-day</TabsTrigger>
         </TabsList>
         <TabsContent value="1-day">
           {activeTab === '1-day' && (
-            <WeatherPage weatherData={weatherData} />
+            <WeatherPage1Day weatherData={weatherData} />
           )}
         </TabsContent>
-        {/* Add TabsContent for other options */}
+        <TabsContent value="7-day">
+          {activeTab === '7-day' && (
+            <WeatherPage7Day weatherData={weatherData} />
+          )}
+        </TabsContent>
       </Tabs>
     </div>
   );

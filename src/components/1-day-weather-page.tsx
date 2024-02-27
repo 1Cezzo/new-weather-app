@@ -27,11 +27,7 @@ interface WeatherPageProps {
   };
 }
 
-interface PrecipitationProps {
-  precip_mm: number;
-}
-
-const WeatherPage: React.FC<WeatherPageProps> = ({ weatherData }) => {
+const WeatherPage1Day: React.FC<WeatherPageProps> = ({ weatherData }) => {
     const { location, current } = weatherData;
     const { name, country } = location;
     const { temp_c, temp_f, condition, wind_kph, wind_mph, precip_mm, gust_kph, gust_mph } = current;
@@ -39,7 +35,7 @@ const WeatherPage: React.FC<WeatherPageProps> = ({ weatherData }) => {
       <div className={`weather-page`}>
         <Card className={`w-[400px]`}>
             <CardHeader>
-                <CardTitle>Weather</CardTitle>
+                <CardTitle>Weather today</CardTitle>
                 <CardDescription>{name}, {country}</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
@@ -56,4 +52,4 @@ const WeatherPage: React.FC<WeatherPageProps> = ({ weatherData }) => {
     );
 }
 
-export default WeatherPage;
+export default WeatherPage1Day;
