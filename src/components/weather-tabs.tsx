@@ -17,7 +17,7 @@ const WeatherTabs: React.FC<WeatherTabsProps> = ({ weatherData, error }) => {
 
   return (
     <div>
-      <Tabs defaultValue={activeTab} className="w-[400px]">
+      <Tabs defaultValue={activeTab} className="w-[600px]">
         <TabsList>
           <TabsTrigger value="1-day" onClick={() => handleTabChange('1-day')}>1-day</TabsTrigger>
           <TabsTrigger value="7-day" onClick={() => handleTabChange('7-day')}>7-day</TabsTrigger>

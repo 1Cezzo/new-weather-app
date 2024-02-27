@@ -21,7 +21,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
 
   return (
     <div className={`weather-page`}>
-      <Card className={`w-[400px]`}>
+      <Card className={`w-[500px]`}>
         <CardHeader>
           <CardTitle>Search</CardTitle>
         </CardHeader>
